@@ -12,12 +12,9 @@ def open_vim(self, compile_latex):
     f.close()
 
     subprocess.run([
-        'urxvt',
-        '-fn', 'xft:Iosevka Term:pixelsize=24',
-        '-geometry', '60x5',
-        '-name', 'popup-bottom-center',
+        'xterm',
         '-e', "vim",
-        "-u", "~/.minimal-tex-vimrc",
+        '-c' "set ft=tex",
         f"{f.name}",
     ])
 
